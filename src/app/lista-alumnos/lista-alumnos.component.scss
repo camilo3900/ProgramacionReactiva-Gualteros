@@ -1,0 +1,48 @@
+.outlined-card{
+    border: 1px solid #e0e0e0; /* Establece el color y grosor del borde */
+    border-radius: 4px; /* Opcional: Redondea las esquinas */
+    padding: 16px; 
+    color: white;
+    background-color: black;
+}
+.margin-card{
+    margin-bottom: 20px;
+    border-radius: 20px;
+    border: 5px solid white;
+}
+.btn-options, .carga{
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.main-title{
+    text-align: center;
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.text-options{
+    font-size: 22px;
+    font-weight: 500;
+}
+
+ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+  }
+  
+  li {
+    margin-bottom: 10px; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    background-color: #f2f2f2; 
+    border-radius: 5px; 
+    text-align: center;
+  }
+  
+  li:hover {
+    background-color: #e0e0e0; 
+    cursor: pointer; 
+  }
+  

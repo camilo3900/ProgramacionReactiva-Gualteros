@@ -1,2 +1,33 @@
-{{alumnos$|async|json}}
-{{name}}
+
+  <h1 class="main-title">{{mainTitle}}</h1>
+  <button mat-flat-button (click)="getIdiomas()" class="btn-options" >Mostrar idiomas</button>
+<p *ngIf="esVisible" class="carga">Cargando Idiomas...</p>
+<div class="container text-left " color="primary" *ngIf="!esVisible && idiomasCargados ">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let card of idiomas">
+      <mat-card class="outlined-card margin-card" >
+        <div class="card-body">
+          <h5 class="card-title text-options">{{card}}</h5>
+          <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto est sunt ipsa.</p>
+          <button mat-flat-button color="primary" class="text-center">Aprender</button>
+          
+        </div>
+      </mat-card>
+    </div>
+    
+    <h3 class="main-title">ALUMNOS MATRICULADOS</h3>
+    <p>Se muestra el listado de alumnos descargando los no matriculados mediante el filter.</p>
+    <h2>Utilizando Observable con onDestroy</h2>
+    <ul>
+      <li *ngFor="let alumno of info">
+        {{alumno}} 
+      </li>
+    </ul>
+
+<h2>Utilizando el pipe Async</h2>
+<p>Se muestra el listado de alumnos por nombre y correo.</p>
+<ul>
+  <li *ngFor="let alumno of alumnos$|async">
+    {{ alumno.name }} - {{ alumno.email }}
+  </li>
+</ul>

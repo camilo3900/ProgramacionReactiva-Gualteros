@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, delay, of } from 'rxjs';
+import { Observable, async, of, take, takeLast } from 'rxjs';
+import { datos } from './data/data';
 
 export interface Alumno{
   id: number,
@@ -14,8 +15,13 @@ export class AlumnosService {
 
   constructor() { }
 
-  getAlumno(): Observable<Alumno[]>{
-    return new Observable((subscriber) =>{subscriber.next([ 
+  getIdioma(): Array<string>{
+    const idiomas= datos.listaIdiomas;
+    return  idiomas;
+  };
+
+  getAlumno(): Observable<Array<Alumno>>{
+    const alumnos=[ 
     {id: 1, name:"Fabian",  email:"fabiguevara@gmail.com", matriculado:true},
     {id: 2, name:"Miguel",  email:"juanmi_96@gmail.com", matriculado:true},
     {id: 3, name:"Carlos",  email:"carpe25@gmail.com", matriculado:false},
@@ -26,6 +32,13 @@ export class AlumnosService {
     {id: 8, name:"Olivia",  email:"peewpec@eva.zw", matriculado:true},
     {id: 9, name:"Ethel",  email:"sihegud@wul.nl", matriculado:true},
     {id: 10, name:"Kyle",  email:"ohowze@ewoed.gw", matriculado:true},
-    {id: 11, name:"Myrtle", email:"adjoto@ji.py", matriculado:false},])
-  })
-}}
+    {id: 11, name:"Myrtle", email:"adjoto@ji.py", matriculado:false},];
+
+  return of(alumnos).pipe(take(5));
+}
+
+
+
+
+}
+
